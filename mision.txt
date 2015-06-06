@@ -43,11 +43,11 @@ public class Aerohorario {
 
             Row fila4 = hoja.createRow(4);
             fila4.createCell(1).setCellValue("Segundo vuelo");
-            fila4.createCell(2).setCellValue("24:56");
+            fila4.createCell(2).setCellValue("23:56");
             fila4.createCell(3).setCellValue("11:50");
 
             Row fila5 = hoja.createRow(5);
-            fila5.createCell(1).setCellValue("Vuelo3");
+            fila5.createCell(1).setCellValue("Tercer vuelo");
             fila5.createCell(2).setCellValue("05:34");
             fila5.createCell(3).setCellValue("17:16");
 
