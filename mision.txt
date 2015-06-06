@@ -1,5 +1,5 @@
 
-Clase: Aerohorario.java
+Clase: Aeropuerto.java
 -----------------------
 
 package uni.fiis.aeropuerto.bean;
