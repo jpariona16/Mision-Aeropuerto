@@ -1,0 +1,117 @@
+
+Clase: Aerohorario.java
+-----------------------
+
+package uni.fiis.aeropuerto.bean;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+
+import java.io.FileOutputStream;
+
+/**
+ * Created by Dell on 05/06/2015.
+ */
+public class Aerohorario {
+    private String horaEntrada;
+    private String horaSalida;
+
+
+    public static void main(String[] args)  throws Exception {
+        Workbook wb = new HSSFWorkbook();
+        Aerohorario a = new Aerohorario();
+        a.setHoraEntrada("11:00");
+        a.setHoraSalida("23:30");
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("D:\\excel\\mision.xls");
+            Sheet hoja = wb.createSheet();
+            Row fila1 = hoja.createRow(1);
+            org.apache.poi.ss.usermodel.Cell cell = fila1.createCell(2);
+            cell.setCellValue("Horarios");
+
+            Row fila2 = hoja.createRow(2);
+            fila2.createCell(2).setCellValue("Salida");
+            fila2.createCell(3).setCellValue("Entrada");
+
+            Row fila3 = hoja.createRow(3);
+            fila3.createCell(1).setCellValue("Primer vuelo");
+            fila3.createCell(2).setCellValue(a.getHoraEntrada());
+            fila3.createCell(3).setCellValue(a.getHoraSalida());
+
+            Row fila4 = hoja.createRow(4);
+            fila4.createCell(1).setCellValue("Segundo vuelo");
+            fila4.createCell(2).setCellValue("24:56");
+            fila4.createCell(3).setCellValue("11:50");
+
+            Row fila5 = hoja.createRow(5);
+            fila5.createCell(1).setCellValue("Vuelo3");
+            fila5.createCell(2).setCellValue("05:34");
+            fila5.createCell(3).setCellValue("17:16");
+
+
+
+
+
+    }
+
+
+
+    public String getHoraEntrada() {
+        return horaEntrada;
+    }
+
+    public void setHoraEntrada(String horaEntrada) {
+        this.horaEntrada = horaEntrada;
+    }
+
+    public String getHoraSalida() {
+        return horaSalida;
+    }
+
+    public void setHoraSalida(String horaSalida) {
+        this.horaSalida = horaSalida;
+    }
+
+
+}
+
+
+
+
+pom.xml
+-------
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>Aeropuerto</groupId>
+  <artifactId>HorariosAeropuerto</artifactId>
+  <packaging>war</packaging>
+  <version>1.0</version>
+  <name>HorariosAeropuerto Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+      <version>3.12</version>
+    </dependency>
+
+  </dependencies>
+  <build>
+    <finalName>HorariosAeropuerto</finalName>
+  </build>
+</project>
+
+
