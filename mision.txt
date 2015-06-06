@@ -51,6 +51,12 @@ public class Aeropuerto {
             fila5.createCell(0).setCellValue("Tercer vuelo");
             fila5.createCell(1).setCellValue("05:34");
             fila5.createCell(2).setCellValue("17:16");
+            
+            
+            Row fila6 = hoja.createRow(5);
+            fila6.createCell(0).setCellValue("Cuarto vuelo");
+            fila6.createCell(1).setCellValue("12:54");
+            fila6.createCell(2).setCellValue("20:45");
 
             wb.write(fileOut);
             fileOut.close();
